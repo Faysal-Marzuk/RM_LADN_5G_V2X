@@ -1,0 +1,45 @@
+/*********************************************
+ * OPL 12.7.1.0 Data
+ * Author: Faysal
+ * Creation Date: Feb 1, 2021 at 5:26:32 PM
+ *********************************************/
+
+ N = 4; //  40; //  400; //
+ V = 50; // 40; // 30; // 10; // 400; // 100; // 200; // 300; //  20; //               
+ mRB = 50;
+ H  = -7;
+ // h  = -7;
+ s = 1;
+ t = 1;
+ // S =  ;
+ // T =  ;
+ 
+ //* Small_Size
+ 
+ SheetConnection sheet("V2X_Small.xlsx");
+ 
+ // ceilofR from SheetRead(sheet, "'ReqRB_10_4'!A1:J4");
+ // ceilofR from SheetRead(sheet, "'ReqRB_20_4'!A1:T4");
+ // ceilofR from SheetRead(sheet, "'ReqRB_30_4'!A1:AD4");
+ // ceilofR from SheetRead(sheet, "'ReqRB_40_4'!A1:AN4");
+ ceilofR from SheetRead(sheet, "'ReqRB_50_4'!A1:AX4");
+ 
+ // SINR from SheetRead(sheet, "'SINR_10_4'!A1:J4");
+ // SINR from SheetRead(sheet, "'SINR_20_4'!A1:T4");
+ // SINR from SheetRead(sheet, "'SINR_30_4'!A1:AD4");
+ // SINR from SheetRead(sheet, "'SINR_40_4'!A1:AN4");
+ SINR from SheetRead(sheet, "'SINR_50_4'!A1:AX4");
+ 
+ //* Medium_Size
+ 
+ // SheetConnection sheet("Copy of V2X_Medium.xlsx");
+ 
+ // ceilofR from SheetRead(sheet, "'ReqRB_100_40'!A1:CV40");
+ // ceilofR from SheetRead(sheet, "'ReqRB_200_40'!A1:GR40");
+ // ceilofR from SheetRead(sheet, "'ReqRB_300_40'!A1:KN40");
+ // ceilofR from SheetRead(sheet, "'ReqRB_400_40'!A1:OJ40");
+  
+ // SINR from SheetRead(sheet, "'SINR_100_40'!A1:CV40");
+ // SINR from SheetRead(sheet, "'SINR_200_40'!A1:GR40");
+ // SINR from SheetRead(sheet, "'SINR_300_40'!A1:KN40");
+ // SINR from SheetRead(sheet, "'SINR_400_40'!A1:OJ40");
