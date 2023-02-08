@@ -1,19 +1,12 @@
-/*********************************************
- * OPL 12.7.1.0 Data
- * Author: Faysal
- * Creation Date: Feb 1, 2021 at 5:26:32 PM
- *********************************************/
-
+ // Number of RRH
  N = 4; //  40; //  400; //
- V = 50; // 40; // 30; // 10; // 400; // 100; // 200; // 300; //  20; //               
- mRB = 50;
- H  = -7;
- // h  = -7;
- s = 1;
- t = 1;
- // S =  ;
- // T =  ;
  
+ // Number of vehicles
+ V = 40; // 50; // 30; // 10; // 400; // 100; // 200; // 300; //  20; // 
+ 
+ mRB = 50; // Number of available uplink RBs at RRH
+ H  = -7; // Threshold value for SINR
+
  //* Small_Size
  
  SheetConnection sheet("V2X_Small.xlsx");
@@ -21,16 +14,17 @@
  // ceilofR from SheetRead(sheet, "'ReqRB_10_4'!A1:J4");
  // ceilofR from SheetRead(sheet, "'ReqRB_20_4'!A1:T4");
  // ceilofR from SheetRead(sheet, "'ReqRB_30_4'!A1:AD4");
- // ceilofR from SheetRead(sheet, "'ReqRB_40_4'!A1:AN4");
- ceilofR from SheetRead(sheet, "'ReqRB_50_4'!A1:AX4");
+ ceilofR from SheetRead(sheet, "'ReqRB_40_4'!A1:AN4");
+ // ceilofR from SheetRead(sheet, "'ReqRB_50_4'!A1:AX4");
  
  // SINR from SheetRead(sheet, "'SINR_10_4'!A1:J4");
  // SINR from SheetRead(sheet, "'SINR_20_4'!A1:T4");
  // SINR from SheetRead(sheet, "'SINR_30_4'!A1:AD4");
- // SINR from SheetRead(sheet, "'SINR_40_4'!A1:AN4");
- SINR from SheetRead(sheet, "'SINR_50_4'!A1:AX4");
+ SINR from SheetRead(sheet, "'SINR_40_4'!A1:AN4");
+ // SINR from SheetRead(sheet, "'SINR_50_4'!A1:AX4");
  
- //* Medium_Size
+
+//* Medium_Size
  
  // SheetConnection sheet("V2X_Medium.xlsx");
  
