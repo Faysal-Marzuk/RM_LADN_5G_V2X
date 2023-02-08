@@ -9,7 +9,10 @@ R. H. Hwang, F. Marzuk, M. Sikora, P. Chołda, and Y. D. Lin, “Resource Manage
 
 Resource Management in Local Access Data Networks (LADNs) Supporting 5G vehicle to everything (V2X) Communications.
 
-The resource management problem is evaluated under three scenarios of V2X network topology with different sizes:                                                      1) A small scenario (4 RRHs and 10-50 vehicles).                                                                                                                      2) A medium-sized scenario (40 RRHs and 100-500 vehicles).                                                                                                            3) A large scenario (400 RRHs and 1000-5000 vehicles).
+The resource management problem is evaluated under three scenarios of V2X network topology with different sizes:                                                     
+1) A small scenario (4 RRHs and 10-50 vehicles).                                                                                                                     
+2) A medium-sized scenario (40 RRHs and 100-500 vehicles).                                                                                                          
+3) A large scenario (400 RRHs and 1000-5000 vehicles).
 
  
 ************
