@@ -11,7 +11,7 @@ Remain = MRB.*ones(1,v);
 y = zeros(v); 
 
 % For Decreasing-Based Algorithms
-[CeilofReqRBd1,dec] = sort(-CeilofReqRB); % Sort ReqRBs in decreasing size order
+[CeilofReqRBd1,dec] = sort(-CeilofReqRB); % Sort ReqRBs in descending order
 CeilofReqRBd = -CeilofReqRBd1;
 [tmp,rec] = sort(dec);
 
@@ -77,7 +77,7 @@ toc
 tic
 % ----------------------------------------------------
 if chos == 0 || chos == 3   % First Fit Decreasing Algorithm
-% Sort ReqRBs in decreasing order and then apply First Fit Algorithm
+% Sort ReqRBs in descending order and then apply First Fit Algorithm
 
 yffd = y; Remainffd = Remain; 
 for i = 1:v
@@ -102,7 +102,7 @@ toc
 tic
 % ----------------------------------------------------
 if chos == 0 || chos == 4  % Best Fit Decreasing Algorithm
-% Sort ReqRBs in decreasing order and then apply Best Fit Algorithm
+% Sort ReqRBs in descending order and then apply Best Fit Algorithm
 
 ybfd = y; Remainbfd = Remain; 
 for i = 1:v 
