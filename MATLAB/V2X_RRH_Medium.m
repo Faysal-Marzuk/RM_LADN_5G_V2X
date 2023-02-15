@@ -1,9 +1,9 @@
-clear; clc; 
+clear; clc;
+
 numberOfVehicles = 100; % 200; 300; 400;
 numberOfRRHs = 40;
 x1 = rand(1, numberOfRRHs)*10;
 y1 = rand(1, numberOfRRHs);
-
 x2 = rand(1, numberOfVehicles)*10;
 y2 = rand(1, numberOfVehicles);
 
