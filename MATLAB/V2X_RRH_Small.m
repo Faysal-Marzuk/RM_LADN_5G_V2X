@@ -103,7 +103,7 @@ for i = 1 : numberOfRRHs
     for j = 1 : numberOfVehicles
     
 %     EfficiencyMatrix(count, :) = [x1(i) y1(i) x2(j) y2(j) Efficiency(i,j)];        
-      DataRate(i,j) = 12*7*Efficiency(i,j)*1000;   
+      DataRate(i,j) = 12*14*Efficiency(i,j)*1000;   
 %     DataRateMatrix(count, :) = [x1(i) y1(i) x2(j) y2(j) DataRate(i,j)];   
       UpLinkDataRate(j) = 1000000;
       MaxRB(i) = 50;    
