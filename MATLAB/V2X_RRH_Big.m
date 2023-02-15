@@ -1,12 +1,26 @@
-clear; clc;
+clear; clc; 
 
 numberOfVehicles = 1000; % 2000; 3000; 4000;
 numberOfRRHs = 400;
 x1 = rand(1, numberOfRRHs)*10;
 y1 = rand(1, numberOfRRHs);
-
 x2 = rand(1, numberOfVehicles)*10;
 y2 = rand(1, numberOfVehicles);
+
+% close all;
+% figure;
+% hold on;
+% hNodes = plot(x1, y1, 'rh', x2, y2, 'b.', 'MarkerSize', 15);
+% title('Snapshots of Vehicles Positions')
+% xlabel('Distance [km]')
+% ylabel('Distance [km]')
+% legend({'RRH','Vehicle'})
+% for i = 1 : numberOfRRHs
+%     text(x1(i)+0.02, y1(i)+0.02, num2str(i),'Color','r')
+% end
+% for j = 1 : numberOfVehicles
+%     text(x2(j)+0.02, y2(j)+0.02, num2str(j),'Color','b')
+% end
 
 alpha = 3.5;
 PtdBm = 23;
@@ -17,27 +31,23 @@ BW = 10*10^(6);
 NOcdBm = -174 + 10*log10(BW);
 NOc = 10^(NOcdBm/10);
 Distance = zeros;
-%DistMatrix = zeros;
 SINR = zeros;
 SINRdB =zeros;
-%SINRdBMatrix =zeros;
 Efficiency = zeros;
-%EfficiencyMatrix = zeros;
 DataRate = zeros;
-%DataRateMatrix = zeros;
 UpLinkDataRate = zeros;
 MaxRB = zeros;
 ReqRB = zeros;
 CeilofReqRB = zeros;
-%CeilofReqRBMatrix = zeros; 
+
 count = 1;
 for i = 1 : numberOfRRHs
     for j = 1 : numberOfVehicles
+        
     Distance(i,j) = sqrt((x1(i) - x2(j))^2 + (y1(i) - y2(j))^2);
-%     DistMatrix(count, :) = [x1(i) y1(i) x2(j) y2(j) Distance(i,j)];
-    SINR(i,j) = (Pt*((Distance(i,j)).^-alpha))/((numberOfRRHs)*In + NOc); 
+    SINR(i,j) = (Pt*((Distance(i,j)).^-alpha))/((numberOfRRHs)*In + NOc);
     SINRdB(i,j)=10*log10(SINR(i,j));
-%     SINRdBMatrix(count, :) = [x1(i) y1(i) x2(j) y2(j) SINRdB(i,j)];
+
     if (SINRdB(i,j) <= -9.5)
         Efficiency(i,j) = 0.000001;
     elseif (SINRdB(i,j) > -9.5) && (SINRdB(i,j) <= -6.7)
@@ -71,38 +81,17 @@ for i = 1 : numberOfRRHs
     elseif (SINRdB(i,j) > 19.8) 
         Efficiency(i,j) = 5.5547;
     end
+        
+    DataRate(i,j) = 12*14*Efficiency(i,j)*1000;  
+    UpLinkDataRate(j) = 1000000;
+    MaxRB(i) = 50;
+    ReqRB(i,j) = UpLinkDataRate(j)/DataRate(i,j);
+    CeilofReqRB(i,j) = ceil(ReqRB(i,j));
+
     count = count + 1; 
     end
 end
-for i = 1 : numberOfRRHs
-    for j = 1 : numberOfVehicles
-    
-%     EfficiencyMatrix(count, :) = [x1(i) y1(i) x2(j) y2(j) Efficiency(i,j)];        
-      DataRate(i,j) = 12*14*Efficiency(i,j)*1000;   
-%     DataRateMatrix(count, :) = [x1(i) y1(i) x2(j) y2(j) DataRate(i,j)];   
-      UpLinkDataRate(j) = 1000000;
-      MaxRB(i) = 50;
-      ReqRB(i,j) = UpLinkDataRate(j)/DataRate(i,j);
-      CeilofReqRB(i,j) = ceil(ReqRB(i,j));
-%     CeilofReqRBMatrix(count, :) = [x1(i) y1(i) x2(j) y2(j) CeilofReqRB(i,j)];
-    count = count + 1;  
 
-    end
-end
-
-
-% DistMatrix = sort(DistMatrix, 5);
-% SINRdBMatrix = sort(SINRdBMatrix, 5);
-% EfficiencyMatrix = sort(EfficiencyMatrix, 5);
-% DataRateMatrix = sort(DataRateMatrix, 5);
-% CeilofReqRBMatrix = sort(CeilofReqRBMatrix, 5);
-% disp(DistMatrix)
-% disp(SINRdBMatrix)
-% disp(EfficiencyMatrix)
-% disp(DataRateMatrix)
-% disp(CeilofReqRBMatrix)
-
-disp(Distance)
 disp(SINRdB)
 disp(Efficiency)
 disp(DataRate)
