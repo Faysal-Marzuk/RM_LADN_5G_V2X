@@ -18,7 +18,7 @@ ReqRBdec = -ReqRBdesc;
 yffd = y; 
 Remainffd = Remain; 
 for i = 1:v
-    obj = find(ReqRBdec(i) <= Remainffd, 1 );
+    obj = find(ReqRBdec(i) <= Remainffd, 1);
     yffd(i,obj) = 1; 
     Remainffd(obj) = Remainffd(obj) - ReqRBdec(i);
  end
