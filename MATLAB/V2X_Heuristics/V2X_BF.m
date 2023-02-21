@@ -11,6 +11,7 @@ y = zeros(v); %  Assignments of vehicles
 % best match the ReqRB size, and assign it to that RRH
 
  tic
+ 
  ybf = y; 
  Remainbf = Remain; 
  for i = 1:v 
